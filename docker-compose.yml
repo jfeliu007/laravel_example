@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: datacenter
+    ports:
+      - "3306:3306"
+  myapp:
+    image: docker.io/bitnami/laravel:8
+    ports:
+      - '8000:8000'
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USERNAME=root
+      - DB_DATABASE=datacenter
+    volumes:
+      - './my-project:/app'
+    depends_on:
+      - mysql
