@@ -24,9 +24,9 @@ class AllTimeHighConnector extends TradeViewConnector
        $this->payload['filter'][] =
        $this->payload['filter'][] =
            [
-               'left' => 'Low.All',
+               'left' => 'High.All',
                'operation' => 'eless',
-               'right' => 'low',
+               'right' => 'high',
            ] ;
    }
 }

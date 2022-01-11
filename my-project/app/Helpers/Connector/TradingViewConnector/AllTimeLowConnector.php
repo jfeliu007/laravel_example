@@ -23,9 +23,9 @@ class AllTimeLowConnector extends TradeViewConnector
         parent::__construct($adapter);
         $this->payload['filter'][] =
             [
-                'left' => 'High.All',
-                'operation' => 'eless',
-                'right' => 'high',
+                'left' => 'Low.All',
+                'operation' => 'egreater',
+                'right' => 'low',
             ] ;
     }
 }
