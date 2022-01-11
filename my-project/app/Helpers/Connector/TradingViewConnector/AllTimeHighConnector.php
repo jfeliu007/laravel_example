@@ -22,7 +22,6 @@ class AllTimeHighConnector extends TradeViewConnector
    {
        parent::__construct($adapter);
        $this->payload['filter'][] =
-       $this->payload['filter'][] =
            [
                'left' => 'High.All',
                'operation' => 'eless',
